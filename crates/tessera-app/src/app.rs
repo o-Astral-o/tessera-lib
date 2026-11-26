@@ -399,13 +399,6 @@ impl TesseraApp {
             return;
         }
 
-        if self.state.asset_manager.loads_folders() {
-            self.on_load_folder();
-
-            let _ = cx;
-            return;
-        }
-
         let mut file_dialog = FileDialog::new().set_title(format!(
             "{} | Select game files to load",
             title_case(self.state.name)
@@ -1814,17 +1807,23 @@ impl TesseraApp {
                 )
             })
             .when(self.state.asset_manager.supports_files(), |this| {
+                // Load files
                 this.child(
                     Button::new("load-file")
                         .icon(IconName::FolderOpen)
-                        .label(if self.state.asset_manager.loads_folders() {
-                            "Load Folder"
-                        } else {
-                            "Load File"
-                        })
+                        .label("Load Files")
                         .outline()
                         .disabled(busy)
                         .on_click(cx.listener(|this, _, _, cx| this.on_load_file(cx))),
+                )
+                // Load folder
+                .child(
+                    Button::new("load-folder")
+                        .icon(IconName::FolderOpen)
+                        .label("Load Folder")
+                        .outline()
+                        .disabled(busy)
+                        .on_click(cx.listener(|this, _, _, cx| this.on_load_folder())),
                 )
             })
             .child(
