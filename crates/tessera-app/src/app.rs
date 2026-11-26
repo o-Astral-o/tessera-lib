@@ -1823,7 +1823,7 @@ impl TesseraApp {
                         .label("Load Folder")
                         .outline()
                         .disabled(busy)
-                        .on_click(cx.listener(|this, _, _, cx| this.on_load_folder())),
+                        .on_click(cx.listener(|this, _, _, _| this.on_load_folder())),
                 )
             })
             .child(
