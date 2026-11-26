@@ -24,15 +24,15 @@ windows-sys = { version = "0.61", default-features = false, features = [
     "Win32_UI_Input_KeyboardAndMouse", "Win32_System_LibraryLoader", "Win32_UI_HiDpi",
     "Win32_Networking_WinHttp", "Wdk_System_SystemInformation",
 ] }
-porter-animation = { git = "https://github.com/dtzxporter/porter-lib", rev = "b35e9e5266be370a09791d417c186dd80f3342a9" }
-porter-audio = { git = "https://github.com/dtzxporter/porter-lib", rev = "b35e9e5266be370a09791d417c186dd80f3342a9" }
-porter-gpu = { git = "https://github.com/dtzxporter/porter-lib", rev = "b35e9e5266be370a09791d417c186dd80f3342a9" }
-porter-math = { git = "https://github.com/dtzxporter/porter-lib", rev = "b35e9e5266be370a09791d417c186dd80f3342a9" }
-porter-model = { git = "https://github.com/dtzxporter/porter-lib", rev = "b35e9e5266be370a09791d417c186dd80f3342a9" }
-porter-texture = { git = "https://github.com/dtzxporter/porter-lib", rev = "b35e9e5266be370a09791d417c186dd80f3342a9" }
-porter-threads = { git = "https://github.com/dtzxporter/porter-lib", rev = "b35e9e5266be370a09791d417c186dd80f3342a9" }
-porter-utils = { git = "https://github.com/dtzxporter/porter-lib", rev = "b35e9e5266be370a09791d417c186dd80f3342a9" }
-porter-world = { git = "https://github.com/dtzxporter/porter-lib", rev = "b35e9e5266be370a09791d417c186dd80f3342a9" }
+porter-animation = { path = "../porter-lib/crates/porter-animation" }
+porter-audio = { path = "../porter-lib/crates/porter-audio" }
+porter-gpu = { path = "../porter-lib/crates/porter-gpu" }
+porter-math = { path = "../porter-lib/crates/porter-math" }
+porter-model = { path = "../porter-lib/crates/porter-model" }
+porter-texture = { path = "../porter-lib/crates/porter-texture" }
+porter-threads = { path = "../porter-lib/crates/porter-threads" }
+porter-utils = { path = "../porter-lib/crates/porter-utils" }
+porter-world = { path = "../porter-lib/crates/porter-world" }
 
 [profile.dev]
 opt-level = 2
